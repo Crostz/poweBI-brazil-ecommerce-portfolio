@@ -32,10 +32,15 @@ Proyecto es de carácter educativo/portafolio y no comercial, en línea con los 
 ## Consideraciones durante la limpieza de datos
 1. Se identificaron datos incompletos en los meses de septiembre y octubre del 2018 por lo que se decidió no trabajar con sus datos.
 2. Se integraron los nombres traducidos de la tabla product_category_name_translation directamente a la tabla olist_products_dataset para reducir la carga de tablas en el dashboard
-3. Se creo una categoría "Sin categoria" para aquellos productos con categoría nula
+3. Se creo una categoría "Sin categoría" para aquellos productos con categoría nula
 4. No se utilizó la tabla olist_geolocation_dataset al no utilizar visualizaciones de mapa
 
 ## Definiciones
+* Ingreso total: Con precio del producto SUM(OrderItems[price])
+* Tiempo de entrega: Días entre order_purchase_timestamp y order_delivered_customer_date
+* Satisfacción promedio: Promedio simple AVERAGE(Reviews[review_score]) con valores del 1 al 5
+* Volumen de ventas: Artículos vendidos COUNT(OrderItems[order_id])
+* Frecuencia de método de pago: COUNTROWS(Payments)
 
 ## Herramientas utilizadas
 Power BI Desktop, DAX, Power Query y Excel
